@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>SATA VIMF 2026 – Đặt Hàng / 订单系统</title>
+<title>SATA & BOSI Tools VIMF 2026 – Đặt Hàng / 订单系统</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -411,7 +411,7 @@ select.inp { cursor: pointer; }
     <div class="brand">
       <div class="brand-icon">⚙</div>
       <div>
-        <div class="brand-logo">SATA TOOLS</div>
+        <div class="brand-logo">SATA & BOSI TOOLS</div>
         <div class="brand-sub">VIMF 2026 · BOOTH 238 · HẢI PHÒNG</div>
       </div>
     </div>
@@ -605,7 +605,7 @@ select.inp { cursor: pointer; }
   <div class="receipt">
     <div class="receipt-drag"></div>
     <div class="receipt-header">
-      <div class="receipt-logo">⚙ SATA TOOLS</div>
+      <div class="receipt-logo">⚙ SATA & BOSI TOOLS</div>
       <div class="receipt-sub">VIMF 2026 · Booth 238 · Hải Phòng · Huachen VN Co.,Ltd</div>
       <div class="receipt-id" id="r_id"></div>
     </div>
@@ -933,7 +933,7 @@ async function submitOrder() {
   ).join('\n');
 
   const emailBody = encodeURIComponent(
-`===== ĐƠN HÀNG SATA VIMF 2026 =====
+`===== ĐƠN HÀNG SATA & BOSI TOOLS VIMF 2026 =====
 Mã đơn / 订单号: ${ORDER_ID}
 Thời gian / 时间: ${ts}
 
@@ -952,10 +952,10 @@ TỔNG CỘNG / 总额: ${fmt(grandTotal)}
 ${order.ghi_chu ? '\nGHI CHÚ / 备注: '+order.ghi_chu : ''}
 
 ===================================
-SATA TOOLS · VIMF 2026 · Booth 238 · Hải Phòng`
+SATA & BOSI TOOLS · VIMF 2026 · Booth 238 · Hải Phòng`
   );
 
-  const emailSubject = encodeURIComponent(`[SATA VIMF] ${ORDER_ID} — ${order.ten_kh} — ${fmt(grandTotal)}`);
+  const emailSubject = encodeURIComponent(`[SATA & BOSI VIMF] ${ORDER_ID} — ${order.ten_kh} — ${fmt(grandTotal)}`);
   const mailtoLink = `mailto:${EMAIL_DEFAULT}?subject=${emailSubject}&body=${emailBody}`;
 
   document.getElementById('r_ok').style.display = 'none';
@@ -1018,10 +1018,10 @@ ${nvLines}
 ${orderLines}
 
 ===================================
-Báo cáo tự động từ hệ thống SATA VIMF 2026`
+Báo cáo tự động từ hệ thống SATA & BOSI TOOLS VIMF 2026`
   );
 
-  const subject = encodeURIComponent(`[BÁO CÁO NGÀY ${today}] SATA VIMF — ${todayOrders.length} đơn — ${fmt(grandTotal)}`);
+  const subject = encodeURIComponent(`[BÁO CÁO NGÀY ${today}] SATA & BOSI VIMF — ${todayOrders.length} đơn — ${fmt(grandTotal)}`);
   window.location.href = `mailto:${EMAIL_DEFAULT}?subject=${subject}&body=${body}`;
   showToast('📊 Đang mở email báo cáo!');
 }
